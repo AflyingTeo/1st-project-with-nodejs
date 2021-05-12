@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 //     res.render('index', { title: 'Hey', message: 'Hello there!' })
 // }
 
-app.get('/', (req, res) => res.render('index',{ title: 'Home', message: 'Hello!!!!'}));
+app.get('/', (req, res) => res.render('index',{ title: 'Home'}));
 
 
 app.listen(port, () => {
