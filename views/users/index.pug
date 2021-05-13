@@ -1,0 +1,18 @@
+html
+    head
+        title= title 
+    body 
+        h1 USER LIST
+        a(href="/user/create") Create User
+
+        form(action="/user/search", methods="GET")
+            label  Name
+            input(name= "q", type= "text" value= searchedValue)
+            button Search
+
+
+        ul
+            each user in users
+                li
+                    span= user.name
+                    a(href="/user/" + user.id) View 
