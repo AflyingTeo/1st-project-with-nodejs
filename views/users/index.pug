@@ -1,18 +1,40 @@
-html
-    head
-        title= title 
-    body 
+extends ../layouts/common.pug
+
+block content
+    .mt-4.container
         h1 USER LIST
-        a(href="/user/create") Create User
+        //- a(href="/users/create") Create User
 
-        form(action="/user/search", methods="GET")
-            label  Name
-            input(name= "q", type= "text" value= searchedValue)
-            button Search
+        //- form(action="/users/search", methods="GET")
+        //-     label  Name
+        //-     input(name= "q", type= "text" value= searchedValue)
+        //-     button Search
+        form(action="/users/search", methods="GET")
+            .mb-3
+                label.form-label(for='name') Name
+                input#name.form-control(type='text', name="q", value= searchedValue)
+            button.btn.btn-primary Search
 
-
-        ul
-            each user in users
-                li
-                    span= user.name
-                    a(href="/user/" + user.id) View 
+        a(href="/users/create")
+            button.btn.btn-primary Create User
+        //- ul
+        //-     each user in users
+        //-         li
+        //-             span= user.name
+        //-             a(href="/users/" + user.id) View 
+        table.table
+            thead
+                tr
+                    th(scope='col') #
+                    th(scope='col') Name
+                    th(scope='col') Phone
+                    th(scope='col') Actions
+            tbody
+                each user in users
+                    tr
+                        th(scope='row') 
+                            td= user.name
+                            td= user.phone
+                            td 
+                                a(href="/users/" + user.id) View 
+        

@@ -1,20 +1,11 @@
 {
   "user": [
     {
-      "name": "1",
-      "id": "8ZOTncqKq"
-    },
-    {
-      "name": "2",
-      "id": "XVuMsJ1KZ"
-    },
-    {
-      "name": "3",
-      "id": "o5o5TZON6"
-    },
-    {
-      "name": "4",
-      "id": "3BC0aIwTc"
+      "name": "TEO",
+      "phone": "07033813093",
+      "id": "UXKzgvZZP",
+      "email": "teo@gmail.com",
+      "password": "123123"
     }
   ]
 }
