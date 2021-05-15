@@ -1,18 +1,22 @@
 require('dotenv').config();
-
+// console.log(process.env.SESSION_SECRET) TO DO DEBUG
 const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const authMiddleware = require('./middleware/login/auth.middleware');
+
 const userRoute = require('./Routes/user.route');
 const authRoute = require('./Routes/auth.route');
 const productsRoute = require('./Routes/products.route');
-const cookieParser = require('cookie-parser');
+const homeRoute = require('./Routes/home.route');
+
 //Midlleware bodyparser
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 //cookies parser
-app.use(cookieParser(process.env.SECSION_SECRET));
+app.use(cookieParser(process.env.SESSION_SECRET));
 //Use template enegines Pug
 app.set('view engine', 'pug');
 app.use(express.static('public'))
@@ -34,7 +38,7 @@ app.use(express.static('public'))
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productsRoute);
-app.get('/', (req, res) => res.render('index',{ title: 'Home'}));
+app.use('/', homeRoute);
 
 
 

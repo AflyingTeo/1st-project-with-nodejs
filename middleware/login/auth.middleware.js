@@ -3,7 +3,7 @@ const db = require('../../db');
 class AuthMiddleware{
    
     authRequire(req, res, next){
-        console.log('req.cookies.userId' + req.cookies.userId)
+        // console.log('req.cookies.userId' + req.cookies.userId)
         if(!req.signedCookies.userId){
             res.redirect('/auth/login');
             return;
