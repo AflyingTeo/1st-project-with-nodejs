@@ -27,10 +27,14 @@ block content
                 else 
                     li.page-item
                         a.page-link(href='/products/products-list?page=' + prevPage) Previous
-                        -var n = 1
-                        while n <= pageLength
-                            li.page-item
-                                a.page-link(href='/products/products-list?page='+ n)= n++
+                        
+                        -for(var n= 1; n<= pageLength; n ++)
+                                if n > 2 && n < 7 
+                                    li.page-item
+                                        a.page-link(href='/products/products-list?page='+ n) ...
+                                else
+                                    li.page-item
+                                        a.page-link(href='/products/products-list?page='+ n)= n
                 li.page-item
                     a.page-link(href='/products/products-list?page=' + nextPage) Next
 

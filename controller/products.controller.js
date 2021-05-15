@@ -10,8 +10,11 @@ class ProductsController{
         var start = (page - 1) * perPage;
         var end = page * perPage;
         var products = db.get('products').value();
+        // var productsPerPage = db.get('products').value().slice(start, end);
         var productsPerPage = db.get('products').value().slice(start, end);
         var pageLength = Math.round(products.length / perPage);
+//TO DEBUG
+        // var pageLength = 100;
         var nextPage = parseInt(req.query.page) + 1;
         var prevPage = parseInt(req.query.page) - 1;
         res.render('products/index', 
