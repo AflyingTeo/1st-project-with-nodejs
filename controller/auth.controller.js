@@ -2,15 +2,18 @@ const md5 = require('md5');
 const db = require('../db');
 
 class AuthController{
+
+    //[GET] /login
     getLogin(req, res){
         res.render('auth/login');
     }
+
+    //Post Login
     postLogin(req, res){
         var email = req.body.email;
         var password = req.body.password;
         var user = db.get('user').find({ email : email}).value();
         
-
         if(!user){
             res.render('auth/login',{
                 errors : [
@@ -22,6 +25,7 @@ class AuthController{
         }
 
         var hashedPassword = md5(password);
+        console.log(md5(password));
         if(user.password !== hashedPassword){
             res.render('auth/login',{
                 errors : [
@@ -32,7 +36,9 @@ class AuthController{
             return;
         }
 
-        res.cookie('userId', user.id);
+        res.cookie('userId', user.id, {
+            'signed': true
+        });
         res.redirect('/users');
 
     }
