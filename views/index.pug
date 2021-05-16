@@ -2,6 +2,10 @@ extends ./layouts/common.pug
 
 block content
     .mt-4.container 
-        h1 Hello Welcome To My Page 
+        if signedCookies
+            each user in users 
+                h1 Hello #{user.name} 
+        else    
+            h1 Welcome to my page
     //- a(href="/users") User Lists
         

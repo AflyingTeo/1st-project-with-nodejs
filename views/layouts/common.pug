@@ -9,39 +9,25 @@ html
                     .container-fluid
                         a.navbar-brand(href='/home') K
                         ul.navbar-nav.mr-auto.mb-2.mb-lg-0
-                            if users
-                                each user in users
-                                    li.nav-item.dropdown
-                                        a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')= user.name
-                                        ul.dropdown-menu(aria-labelledby='navbarDropdown')
-                                            li
-                                                a.dropdown-item(href='/users') Users List
-                                            li
-                                                a.dropdown-item(href='/users/create') Create User
-                                            li
-                                                a.dropdown-item(href='#') User Edit
-                                            li
-                                                hr.dropdown-divider
-                                            li.nav-item
-                                                a.dropdown-item(href='#') Logout
-                            else if signedCookies
-                                each user in users
+                            if signedCookies
+                                if users
+                                    each user in users
                                         li.nav-item.dropdown
                                             a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')= user.name
                                             ul.dropdown-menu(aria-labelledby='navbarDropdown')
                                                 li
-                                                    a.dropdown-item(href='/users') Users List
+                                                a.dropdown-item(href='/users') Users List
+                                                //- li
+                                                //- a.dropdown-item(href='/users/create') Create User
                                                 li
-                                                    a.dropdown-item(href='/users/create') Create User
+                                                a.dropdown-item(href='#') User Edit
                                                 li
-                                                    a.dropdown-item(href='#') User Edit
-                                                li
-                                                    hr.dropdown-divider
+                                                hr.dropdown-divider
                                                 li.nav-item
-                                                    a.dropdown-item(href='#') Logout
+                                                a.dropdown-item(href='#') Logout
                             else
                                 li.nav-item
-                                    a.nav-link.active(aria-current='page', href='/') Sign Up
+                                    a.nav-link.active(aria-current='page', href='/users/create') Sign Up
                                 li.nav-item
                                     a.nav-link(href='/auth/login') Login
 

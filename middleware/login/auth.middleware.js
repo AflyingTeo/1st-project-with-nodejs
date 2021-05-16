@@ -16,7 +16,7 @@ class AuthMiddleware{
             return;
         }
 
-        res.locals.user = user;
+        res.locals.users = user;
         next();
 
     }

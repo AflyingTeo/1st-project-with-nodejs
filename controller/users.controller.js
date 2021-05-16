@@ -5,7 +5,7 @@ class UserController {
 
     //[GET] /users
     index(req, res){
-        res.render('users/index',{users : db.get('user').value()});
+        res.render('users/index',{users : db.get('user').value(), signedCookies: req.signedCookies.userId});
     }
 
     //[GET] /users/search
@@ -23,7 +23,7 @@ class UserController {
     }
     //[GET] /users/create
     getCreate(req, res){
-        res.render('users/create')
+        res.render('users/create',{users : db.get('user').value(), signedCookies: req.signedCookies.userId})
     }
 
     //[POST] /users/create

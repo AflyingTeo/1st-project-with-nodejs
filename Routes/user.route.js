@@ -6,8 +6,8 @@ const authMiddleware = require('../middleware/login/auth.middleware');
 
 router.get('/', authMiddleware.authRequire, usersController.index);
 router.get('/search', authMiddleware.authRequire, usersController.search);
-router.get('/create', authMiddleware.authRequire, usersController.getCreate);
-router.post('/create',authMiddleware.authRequire, userCreateValidate.userCreateValidate, usersController.postCreate);
+router.get('/create', usersController.getCreate);
+router.post('/create', userCreateValidate.userCreateValidate, usersController.postCreate);
 router.get('/:id',authMiddleware.authRequire, usersController.userDetails);
 
 module.exports = router;
