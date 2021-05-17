@@ -1,6 +1,7 @@
 const md5 = require('md5');
 const db = require('../db');
 
+
 class ProductsController{
 
     //[GET] /Products

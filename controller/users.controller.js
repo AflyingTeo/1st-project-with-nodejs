@@ -29,6 +29,8 @@ class UserController {
     //[POST] /users/create
     postCreate(req, res){
         req.body.id = shortId.generate();
+        req.body.avatar = (req.file.path).split('/').slice(1).join('/');
+        console.log(req.body.avatar);
         db.get('user').push(req.body).write();
         res.redirect('/users');
     }

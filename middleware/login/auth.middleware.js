@@ -17,6 +17,7 @@ class AuthMiddleware{
         }
 
         res.locals.users = user;
+        // res.locals.signedCookies = req.signedCookies.userId;
         next();
 
     }

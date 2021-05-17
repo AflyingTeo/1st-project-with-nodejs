@@ -11,9 +11,8 @@ html
                         ul.navbar-nav.mr-auto.mb-2.mb-lg-0
                             if signedCookies
                                 if users
-                                    each user in users
-                                        li.nav-item.dropdown
-                                            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')= user.name
+                                    li.nav-item.dropdown
+                                            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')= users.name
                                             ul.dropdown-menu(aria-labelledby='navbarDropdown')
                                                 li
                                                 a.dropdown-item(href='/users') Users List
@@ -26,10 +25,17 @@ html
                                                 li.nav-item
                                                 a.dropdown-item(href='#') Logout
                             else
+                                if addItemsCount
+                                    li.nav-item
+                                        a.nav-link.active(aria-current='page', href='#') Cart (#{addItemsCount})
+                                else
+                                    li.nav-item
+                                            a.nav-link.active(aria-current='page', href='#') Cart
                                 li.nav-item
                                     a.nav-link.active(aria-current='page', href='/users/create') Sign Up
                                 li.nav-item
                                     a.nav-link(href='/auth/login') Login
+
 
 
                     

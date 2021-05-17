@@ -6,6 +6,12 @@
       "id": "UXKzgvZZP",
       "email": "teo@gmail.com",
       "password": "4297f44b13955235245b2497399d7a93"
+    },
+    {
+      "name": "Teo Bay Bong",
+      "phone": "07038813093",
+      "id": "kX5nVhz_5",
+      "avatar": "uploads/97de00d430133e353dfc77982b0198f7"
     }
   ],
   "products": [
@@ -708,6 +714,28 @@
       "product_description": "pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in",
       "product_price": "augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt",
       "product_image": "https://loremflickr.com/320/240/"
+    }
+  ],
+  "sessions": [
+    {
+      "sessionsId": "IZgBG_9OJ",
+      "cart": {
+        "408ccbea-0bd4-46a4-9b90-a9a0dcc8226c": 43,
+        "f43e6279-f876-4740-97e9-a9761c8466ea": 2,
+        "a866f68c-ccce-4328-95c7-cae8e75f0845": 1,
+        "beb63a51-0074-4847-8c87-236e617f5d34": 1
+      }
+    },
+    {
+      "sessionsId": "zKNx2rhie",
+      "cart": {
+        "408ccbea-0bd4-46a4-9b90-a9a0dcc8226c": 3,
+        "f43e6279-f876-4740-97e9-a9761c8466ea": 1,
+        "ee7ee532-0629-464a-b5e3-d3c5c6e173bc": 1
+      }
+    },
+    {
+      "sessionsId": "BbOng6T_A"
     }
   ]
 }

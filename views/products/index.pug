@@ -13,7 +13,7 @@ block content
                             .card-body
                                 h5.card-title= product.product_name
                                 p.card-text= product.product_description
-                                a.btn.btn-primary(href='#') View detail
+                                a.btn.btn-primary(href='/cart/add/'+ product.id) Add To Cart
         
         nav.mt-4(aria-label='Page navigation example')
             ul.pagination.justify-content-end

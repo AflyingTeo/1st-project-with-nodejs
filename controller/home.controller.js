@@ -3,8 +3,18 @@ const db = require("../db");
 class HomeController{
 
     getHome(req, res){
-        res.render('index', { users: db.get('user').value(), signedCookies: req.signedCookies.userId});
-        // console.log(req.signedCookies.userId);
+        if(!req.signedCookies){
+            
+            res.render('index', { users: db.get('user').value()});
+            return;
+        }
+        else{
+            
+            // var users = db.get('user').find({ id : req.signedCookies.userId}).value();
+            res.render('index', { users: db.get('user').find({ id : req.signedCookies.userId}).value(), signedCookies: req.signedCookies.userId});
+            console.log(req.signedCookies.userId)
+        }
+
     }
 }
 
